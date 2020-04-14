@@ -9,7 +9,13 @@ export const getTopics = async () => {
 };
 
 export const getArticles = async (query) => {
-  console.log(query);
-  const articles = await request.get("/articles", { params: query  });
+  //   console.log(query);
+  const articles = await request.get("/articles", { params: query });
   return articles.data;
+};
+
+export const getArticleById = async (id) => {
+  //   console.log(query);
+  const article = await request.get(`/articles/${id}`);
+  return article.data;
 };
