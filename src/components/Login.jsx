@@ -38,7 +38,7 @@ class Login extends Component {
   handleLogin = (e) => {
     e.preventDefault();
     const { usernames, inputValue } = this.state;
-    const { loginUser, currentUser } = this.props;
+    const { loginUser} = this.props;
     usernames.forEach((username) => {
       if (username === inputValue) {
         loginUser(inputValue);
