@@ -7,7 +7,8 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import AllArticles from "./components/All-Articles";
 import Topics from "./components/Topics";
-import ArticlesByTopic from "./components/ArticlesByTopic";
+
+import SingleArticle from "./components/Single-Article";
 
 class App extends Component {
   state = {
@@ -27,7 +28,9 @@ class App extends Component {
         <Home currentUser={currentUser} />
         <Router>
           <AllArticles path="/" />
-          <AllArticles path="/articles/:topic" />
+          <AllArticles path="/articles/topic/:topic" />
+          {/* is this correct? */}
+          <SingleArticle path="/articles/:article_id" />
         </Router>
       </div>
     );
