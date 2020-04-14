@@ -6,8 +6,9 @@ class NavBar extends Component {
   render() {
     return (
       <nav>
-        <Link className="links" to="/">Home</Link> 
-        <Link className="links" to="/articles">All Articles</Link>
+        <Link className="links" to="/">
+          Home
+        </Link>
       </nav>
     );
   }
