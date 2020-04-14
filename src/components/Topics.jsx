@@ -22,7 +22,7 @@ class Topics extends Component {
         ) : (
           <div className="Topics-Container">
             {topics.map((topic) => (
-              <Link key={topic.slug} to={`articles/${topic.slug}`}>
+              <Link key={topic.slug} to={`/articles/topic/${topic.slug}`}>
                 {" "}
                 <div id={topic.slug} className="Topic-Box">
                   {topic.slug.toUpperCase()}
