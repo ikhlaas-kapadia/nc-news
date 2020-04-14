@@ -7,13 +7,12 @@ class Topics extends Component {
 
   componentDidMount() {
     api.getTopics().then(({ topics }) => {
-      console.log(topics);
       this.setState({ topics: topics, isLoading: false });
     });
   }
   render() {
     const { topics, isLoading } = this.state;
-    console.log(topics, isLoading);
+
     return (
       <section>
         <h3>Most trending Topics</h3>
@@ -23,9 +22,9 @@ class Topics extends Component {
         ) : (
           <div className="Topics-Container">
             {topics.map((topic) => (
-              <Link to={`/${topic.slug}`}>
+              <Link key={topic.slug} to={`articles/${topic.slug}`}>
                 {" "}
-                <div id={topic.slug} className="Topic-Box" key={topic.slug}>
+                <div id={topic.slug} className="Topic-Box">
                   {topic.slug.toUpperCase()}
                   <br></br>
                   <p>{topic.description}</p>
