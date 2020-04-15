@@ -25,7 +25,7 @@ class Comments extends Component {
               <h4>{comment.author}</h4>
               <article>{comment.body}</article>
               <p>Posted: {comment.created_at}</p>
-              <Voter votes={comment.votes} />
+              <Voter votes={comment.votes} id={comment.comment_id} type="comments"/>
             </div>
           );
         })}
