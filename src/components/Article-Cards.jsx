@@ -1,18 +1,26 @@
 import React from "react";
 import { Link } from "@reach/router";
 const ArticleCard = (props) => {
-  const { article } = props;
+  const {
+    article_id,
+    topic,
+    author,
+    created_at,
+    comment_count,
+    title,
+    votes,
+  } = props.article;
 
   return (
     <li>
-      <Link to={`/articles/${article.article_id}`}>
-        <h4>{article.title}</h4>
+      <Link to={`/articles/${article_id}`}>
+        <h4>{title}</h4>
       </Link>
-      <p>Topic: {article.topic}</p>
-      <p>Written by: {article.author}</p>
-      <p>Created: {article.created_at}</p>
-      <p>Votes: {article.votes}</p>
-      <p>Comments: {article.comment_count}</p>
+      <p>Topic: {topic}</p>
+      <p>Written by: {author}</p>
+      <p>Created: {created_at}</p>
+      <p>Comments: {comment_count}</p>
+      <p>Votes: {votes}</p>
     </li>
   );
 };
