@@ -14,6 +14,7 @@ class Comments extends Component {
   }
   render() {
     const { comments, isLoading } = this.state;
+    const { currentUser } = this.props;
     return isLoading ? (
       <div className="loader">Loading...</div>
     ) : (
@@ -25,8 +26,9 @@ class Comments extends Component {
               <h4>{comment.author}</h4>
               <article>{comment.body}</article>
               <p>Posted: {comment.created_at}</p>
+              {currentUser === comment.author && <button>Delete</button>}
               <Voter
-                currentUser={this.props.currentUser}
+                currentUser={currentUser}
                 votes={comment.votes}
                 id={comment.comment_id}
                 type="comments"
