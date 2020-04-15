@@ -3,12 +3,11 @@ import * as api from "../utils/api";
 
 class Sort extends Component {
   state = {
-    sort_by: "",
+    sort_by: "created_at",
     order: "desc",
     author: undefined,
   };
   render() {
-    console.log(this.props);
     return (
       <section>
         Sort By:
@@ -26,20 +25,32 @@ class Sort extends Component {
         </select>
         <br />
         <label>
-          Author:
-          <input onChange={this.handleInput} type="text"></input>
+          Filter by Author:
+          <input
+            placeholder="jessjelly"
+            onChange={this.handleInput}
+            type="text"
+          ></input>
         </label>
-        <button>Search</button>
+        <button onClick={this.handleSearch}>Search</button>
+        <button onClick={this.handleClear}>Clear</button>
       </section>
     );
   }
 
   handleInput = (e) => {
-    console.log(e.target.value);
+    const { value } = e.target;
+    this.setState({ author: value });
   };
 
-  handleClick = (e) => {
-    // this.setState({author:})
+  handleSearch = (e) => {
+    this.fetchSortedArticles();
+  };
+
+  handleClear = (e) => {
+    this.setState({ author: undefined }, () => {
+      this.fetchSortedArticles();
+    });
   };
 
   handleChange = (e, criteria) => {
@@ -58,7 +69,12 @@ class Sort extends Component {
         sort_by: sort_by,
         order: order,
       })
-      .then(({ articles }) => sortArticles(articles));
+      .then(({ articles }) => sortArticles(articles))
+      .catch((err) =>
+        alert(
+          `Author ${err.response.data.msg}. Please refer to author names below`
+        )
+      );
   };
 }
 
