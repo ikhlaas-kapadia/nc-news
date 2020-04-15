@@ -19,3 +19,9 @@ export const getArticleById = async (id) => {
   const article = await request.get(`/articles/${id}`);
   return article.data;
 };
+
+export const getComments = async (id) => {
+    //   console.log(query);
+    const comments = await request.get(`/articles/${id}/comments`);
+    return comments.data;
+  };
