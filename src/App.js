@@ -26,9 +26,12 @@ class App extends Component {
 
         <Router>
           <AllArticles currentUser={currentUser} path="/" />
-          <AllArticles path="/articles/topic/:topic" />
+          <AllArticles currentUser={currentUser} path="/articles/topic/:topic" />
           {/* is this correct? */}
-          <SingleArticle path="/articles/:article_id/*" />
+          <SingleArticle
+            currentUser={currentUser}
+            path="/articles/:article_id/*"
+          />
         </Router>
       </div>
     );
