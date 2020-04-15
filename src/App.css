@@ -101,3 +101,13 @@ header {
   grid-template-columns: repeat(5, 1fr);
   justify-items: last baseline;
 }
+
+/* <-------- Comments -------> */
+.Comment-Box {
+  width: 70%;
+  margin: 2% auto;
+  border: 1px solid black;
+  padding: 1%;
+  text-align: left;
+  justify-content: left;
+}
