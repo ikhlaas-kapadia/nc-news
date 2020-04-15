@@ -18,7 +18,6 @@ class SingleArticle extends Component {
   }
 
   render() {
-    const { article_id } = this.props;
     const { article, isLoading } = this.state;
     return (
       <section>
