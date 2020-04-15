@@ -15,7 +15,7 @@ class Topics extends Component {
 
     return (
       <section>
-        <h3>Most trending Topics</h3>
+        <h3>Trending Topics</h3>
 
         {isLoading ? (
           <p>isloading...</p>

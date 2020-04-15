@@ -16,7 +16,7 @@ class Voter extends Component {
           disabled={optimisticVote < 0}
           className={optimisticVote === -1 ? "Vote-Btn Voted" : "Vote-Btn "}
         >
-          👎
+         <span> 👎</span>
         </button>
         Votes: {this.props.votes + optimisticVote}{" "}
         <button
@@ -25,7 +25,7 @@ class Voter extends Component {
           disabled={optimisticVote > 0}
           className={optimisticVote === 1 ? "Vote-Btn Voted" : "Vote-Btn "}
         >
-          👍
+          <span>👍</span>
         </button>
       </section>
     );

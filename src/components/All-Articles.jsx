@@ -2,24 +2,27 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import ArticleCard from "./Article-Cards";
 import Home from "./Home";
+import Sort from "./Sort-Articles";
 
 class AllArticles extends Component {
   state = { articles: [], isLoading: true };
 
   componentDidMount() {
-    api.getArticles().then(({ articles }) => {
-      this.setState({ articles: articles, isLoading: false });
-    });
+    this.fetchArticles();
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { topic } = this.props;
-    if (prevProps.topic !== this.props.topic) {
-      api.getArticles({ topic: topic }).then(({ articles }) => {
-        this.setState({ articles: articles, isLoading: false });
-      });
+    if (this.props.topic !== prevProps.topic) {
+      this.fetchArticles();
     }
   }
+
+  fetchArticles = () => {
+    const { topic } = this.props;
+    api.getArticles({ topic: topic }).then(({ articles }) => {
+      this.setState({ articles: articles, isLoading: false });
+    });
+  };
 
   render() {
     const { isLoading, articles } = this.state;
@@ -33,6 +36,7 @@ class AllArticles extends Component {
         ) : (
           <h2>All Articles</h2>
         )}
+        <Sort sortArticles={this.sortArticles} topic={topic} />
 
         <section>
           {isLoading ? (
@@ -50,6 +54,9 @@ class AllArticles extends Component {
       </main>
     );
   }
+  sortArticles = (sortedArticles) => {
+    this.setState({ articles: sortedArticles });
+  };
 }
 
 export default AllArticles;

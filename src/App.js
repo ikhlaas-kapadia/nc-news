@@ -3,10 +3,8 @@ import { Router } from "@reach/router";
 import "./App.css";
 import Header from "./components/Header";
 import Login from "./components/Login";
-import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import AllArticles from "./components/All-Articles";
-import Topics from "./components/Topics";
 
 import SingleArticle from "./components/Single-Article";
 
