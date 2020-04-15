@@ -12,7 +12,7 @@ const ArticleCard = (props) => {
   } = props.article;
 
   return (
-    <li>
+    <li className="Article-Item">
       <Link to={`/articles/${article_id}`}>
         <h4>{title}</h4>
       </Link>
