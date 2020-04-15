@@ -21,6 +21,8 @@ class SingleArticle extends Component {
 
   render() {
     const { article, isLoading } = this.state;
+    const { currentUser } = this.props;
+
     return (
       <section>
         {isLoading ? (
@@ -30,7 +32,12 @@ class SingleArticle extends Component {
             <h4>{article.title}</h4>
             <p>{article.body}</p>
             <ul className="Article-Items">
-              <Voter votes={article.votes} id={article.article_id} type="articles" />
+              <Voter
+                currentUser={currentUser}
+                votes={article.votes}
+                id={article.article_id}
+                type="articles"
+              />
               <li>Topic: {article.topic}</li>
               <li>Written By: {article.author}</li>
               <li>Created: {article.created_at}</li>
@@ -44,7 +51,7 @@ class SingleArticle extends Component {
           </div>
         )}
         <Router>
-          <Comments path="comments" />
+          <Comments currentUser={currentUser} path="comments" />
         </Router>
       </section>
     );
