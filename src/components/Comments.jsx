@@ -7,13 +7,29 @@ class Comments extends Component {
 
   componentDidMount() {
     const { article_id } = this.props;
-    api.getComments(article_id).then(({comments}) => {
-      this.setState({comments: comments, isLoading: false})
+    api.getComments(article_id).then(({ comments }) => {
+      this.setState({ comments: comments, isLoading: false });
     });
   }
   render() {
-    
-    return <div className="Comments">hello</div>;
+    const { comments, isLoading } = this.state;
+    return isLoading ? (
+      <div className="loader">Loading...</div>
+    ) : (
+      <section className="Comments">
+        <h4>Comments</h4>
+        {comments.map((comment) => {
+          return (
+            <div key={comment.comment_id} className="Comment-Box">
+              <h4>{comment.author}</h4>
+              <p>{comment.body}</p>
+              <p>Votes: {comment.votes}</p>
+              <p>Posted: {comment.created_at}</p>
+            </div>
+          );
+        })}
+      </section>
+    );
   }
 }
 
