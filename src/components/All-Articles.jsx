@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import ArticleCard from "./Article-Cards";
+import Home from "./Home";
 
 class AllArticles extends Component {
   state = { articles: [], isLoading: true };
@@ -22,12 +23,17 @@ class AllArticles extends Component {
 
   render() {
     const { isLoading, articles } = this.state;
-    const{topic} = this.props
+    const { topic, currentUser } = this.props;
 
     return (
       <main>
-        {topic ? <h2>{topic.toUpperCase()} Articles</h2>:  <h2>All Articles</h2>}
-       
+        <Home currentUser={currentUser} />
+        {topic ? (
+          <h2>{topic.toUpperCase()} Articles</h2>
+        ) : (
+          <h2>All Articles</h2>
+        )}
+
         <section>
           {isLoading ? (
             <div className="loader">Loading...</div>

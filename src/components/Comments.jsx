@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import * as api from "../utils/api";
+import Voter from "./Voter";
 
 class Comments extends Component {
   state = { comments: [], isLoading: true };
@@ -22,9 +23,9 @@ class Comments extends Component {
           return (
             <div key={comment.comment_id} className="Comment-Box">
               <h4>{comment.author}</h4>
-              <p>{comment.body}</p>
-              <p>Votes: {comment.votes}</p>
+              <article>{comment.body}</article>
               <p>Posted: {comment.created_at}</p>
+              <Voter votes={comment.votes} />
             </div>
           );
         })}

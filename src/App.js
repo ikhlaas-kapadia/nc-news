@@ -25,9 +25,9 @@ class App extends Component {
           loginUser={this.loginUser}
           logoutUser={this.logoutUser}
         />
-        <Home currentUser={currentUser} />
+
         <Router>
-          <AllArticles path="/" />
+          <AllArticles currentUser={currentUser} path="/" />
           <AllArticles path="/articles/topic/:topic" />
           {/* is this correct? */}
           <SingleArticle path="/articles/:article_id/*" />

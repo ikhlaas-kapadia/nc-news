@@ -3,6 +3,8 @@ import "../App.css";
 import * as api from "../utils/api";
 import { Router, Link } from "@reach/router";
 import Comments from "./Comments";
+import Voter from "./Voter";
+
 class SingleArticle extends Component {
   state = {
     article: {},
@@ -28,7 +30,7 @@ class SingleArticle extends Component {
             <h4>{article.title}</h4>
             <p>{article.body}</p>
             <ul className="Article-Items">
-              <li>Votes: {article.votes}</li>
+              <Voter votes={article.votes} />
               <li>Topic: {article.topic}</li>
               <li>Written By: {article.author}</li>
               <li>Created: {article.created_at}</li>
