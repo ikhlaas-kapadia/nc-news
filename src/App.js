@@ -30,7 +30,7 @@ class App extends Component {
           <AllArticles path="/" />
           <AllArticles path="/articles/topic/:topic" />
           {/* is this correct? */}
-          <SingleArticle path="/articles/:article_id" />
+          <SingleArticle path="/articles/:article_id/*" />
         </Router>
       </div>
     );
