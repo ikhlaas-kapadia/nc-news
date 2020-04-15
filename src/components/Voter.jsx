@@ -9,6 +9,7 @@ class Voter extends Component {
 
   render() {
     const { optimisticVote } = this.state;
+
     return (
       <section>
         <button
@@ -16,7 +17,7 @@ class Voter extends Component {
           disabled={optimisticVote < 0}
           className={optimisticVote === -1 ? "Vote-Btn Voted" : "Vote-Btn "}
         >
-         <span> 👎</span>
+          <span> 👎</span>
         </button>
         Votes: {this.props.votes + optimisticVote}{" "}
         <button
@@ -31,11 +32,16 @@ class Voter extends Component {
     );
   }
   handleVoteclick = (vote) => {
-    const { id, type } = this.props;
-    this.setState((currentState) => {
-      return { optimisticVote: currentState.optimisticVote + vote };
-    });
-    api.updateVote(id, vote, type);
+    const { currentUser, id, type } = this.props;
+
+    if (currentUser) {
+      this.setState((currentState) => {
+        return { optimisticVote: currentState.optimisticVote + vote };
+      });
+      api.updateVote(id, vote, type);
+    } else {
+      alert("Please login to vote");
+    }
   };
 }
 
