@@ -9,19 +9,21 @@ export const getTopics = async () => {
 };
 
 export const getArticles = async (query) => {
-  //   console.log(query);
   const articles = await request.get("/articles", { params: query });
   return articles.data;
 };
 
 export const getArticleById = async (id) => {
-  //   console.log(query);
   const article = await request.get(`/articles/${id}`);
   return article.data;
 };
 
 export const getComments = async (id) => {
-    //   console.log(query);
-    const comments = await request.get(`/articles/${id}/comments`);
-    return comments.data;
-  };
+  const comments = await request.get(`/articles/${id}/comments`);
+  return comments.data;
+};
+
+export const updateVote = async (id, vote, type) => {
+  const votes = await request.patch(`/${type}/${id}`, { inc_votes: vote });
+  return votes.data;
+};
