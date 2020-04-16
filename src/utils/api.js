@@ -23,10 +23,10 @@ export const getComments = async (id) => {
   return comments.data;
 };
 
-// export const deleteComment = async (id) => {
-//   const deletedComment = await request.delete(`/comments/${id}`);
-//   return deletedComment;
-// };
+export const deleteComment = async (id) => {
+  const deletedComment = await request.delete(`/comments/${id}`);
+  return deletedComment;
+};
 
 export const postComment = async (article_id, comment) => {
   const addedComment = await request.post(`/articles/${article_id}/comments`, {
