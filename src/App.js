@@ -16,15 +16,14 @@ class App extends Component {
   render() {
     const { currentUser } = this.state;
     return (
-      <div className="App">
+      <div className="Wrapper">
         <Header />
-        <NavBar />
         <Login
           currentUser={currentUser}
           loginUser={this.loginUser}
           logoutUser={this.logoutUser}
         />
-
+        <NavBar />
         <Router>
           <AllArticles currentUser={currentUser} path="/" />
           <AllArticles
