@@ -34,13 +34,14 @@ class SingleArticle extends Component {
 
   render() {
     const { article, isLoading, articleError } = this.state;
-    const { currentUser } = this.props;
+    const { currentUser, path } = this.props;
+    console.log(path);
     if (articleError)
       return <ErrorPage status={articleError.status} msg={articleError.msg} />;
     return (
       <section>
         {isLoading ? (
-          <Loader/>
+          <Loader />
         ) : (
           <div className="Single-Article-Container">
             <h4>{article.title}</h4>

@@ -8,6 +8,7 @@ import AllArticles from "./components/All-Articles";
 
 import SingleArticle from "./components/Single-Article";
 import ErrorPage from "./components/Error-Page";
+import Welcome from "./components/Welcome";
 
 class App extends Component {
   state = {
@@ -17,12 +18,11 @@ class App extends Component {
     const { currentUser } = this.state;
     return (
       <div className="Wrapper">
-        <Header />
-        <Login
-          currentUser={currentUser}
+        <Header currentUser={currentUser}
           loginUser={this.loginUser}
-          logoutUser={this.logoutUser}
-        />
+          logoutUser={this.logoutUser} />
+        
+        {/* <Welcome currentUser={currentUser}/> */}
         <NavBar />
         <Router>
           <AllArticles currentUser={currentUser} path="/" />

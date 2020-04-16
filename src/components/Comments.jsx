@@ -24,17 +24,28 @@ class Comments extends Component {
     const { comments, isLoading, commentsError } = this.state;
     const { currentUser } = this.props;
     if (commentsError) return <ErrorPage />;
-    console.log(this.props);
+
     return isLoading ? (
-      <Loader/>
+      <Loader />
     ) : (
       <section className="Comments">
         <h4>Comments</h4>
         <CommentAdder addComment={this.addComment} currentUser={currentUser} />
         {comments.map((comment) => {
           return (
-            <div key={comment.comment_id} className="Comment-Box">
-              <h4>{comment.author}</h4>
+            <div
+              key={comment.comment_id}
+              className={
+                currentUser !== comment.author
+                  ? "Comment-Box"
+                  : "Comment-Box User-Comment"
+              }
+            >
+              <h4>
+                {currentUser !== comment.author
+                  ? comment.author
+                  : "Your comment"}
+              </h4>
               <article>{comment.body}</article>
               <p>Posted: {comment.created_at}</p>
               <Voter

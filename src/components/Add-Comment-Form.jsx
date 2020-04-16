@@ -13,6 +13,7 @@ class CommentAdder extends Component {
           {" "}
           Post a Comment:
           <textarea
+            required
             onChange={this.handleInputvalue}
             className="Comment-Input-Box"
             type="text"
@@ -38,7 +39,7 @@ class CommentAdder extends Component {
     const { inputValue } = this.state;
     const newComment = { username: currentUser, body: inputValue };
     addComment(newComment);
-    this.setState({inputValue: ""})
+    this.setState({ inputValue: "" });
   };
 }
 

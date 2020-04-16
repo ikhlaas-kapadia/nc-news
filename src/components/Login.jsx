@@ -8,11 +8,10 @@ class Login extends Component {
     const { currentUser } = this.props;
 
     return (
-      <section>
+      <section className="Login-Section">
         {!currentUser ? (
           <div className="User-Menu">
             <select onChange={this.handleInputValue}>
-              Login
               <option>Select</option>
               <option value="jessjelly">jessjelly</option>
               <option value="happyamy2016">happyamy2016</option>
