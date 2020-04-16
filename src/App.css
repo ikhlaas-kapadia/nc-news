@@ -1,5 +1,6 @@
 .Wrapper {
   /* text-align: center; */
+
   display: grid;
   width: 100%;
   grid-template-rows: 100px auto 200px;
@@ -34,12 +35,38 @@
   color: rgb(207, 64, 64);
 }
 
-.links,
-.links:visited {
-  margin: 20px;
+/* <------Header------> */
+Header h1 {
+  text-align: center;
+}
+
+.Login-Section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3%;
+  align-self: center;
+
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+/* <------Nav-Bar------> */
+.Nav-Links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Link,
+.Link:visited {
+  margin: 10%;
+  padding: 4%;
   text-decoration: none;
   color: black;
-  display: inline-block;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 40%;
+  text-align: center;
 }
 
 .Topics-Container {
@@ -68,20 +95,6 @@
   padding: 0;
 }
 
-/* <------NavBar------> */
-Header h1 {
-  text-align: center;
-}
-
-.Login-Section {
-  display: flex;
-  flex-direction: column;
-  padding-top: 3%;
-  align-self: center;
-
-  align-items: center;
-  font-size: 0.7rem;
-}
 /* <-------- Login Form-------> */
 .User-Menu {
   vertical-align: bottom;
