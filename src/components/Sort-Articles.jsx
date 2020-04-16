@@ -8,6 +8,7 @@ class Sort extends Component {
     author: undefined,
   };
   render() {
+    const { author } = this.state;
     return (
       <section>
         Sort By:
@@ -27,7 +28,7 @@ class Sort extends Component {
         <label>
           Filter by Author:
           <input
-            placeholder="jessjelly"
+            value={author ? `${author}` : ``}
             onChange={this.handleInput}
             type="text"
           ></input>
