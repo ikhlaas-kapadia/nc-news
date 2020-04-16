@@ -41,6 +41,7 @@ class Voter extends Component {
       api.updateVote(id, vote, type);
     } else {
       alert("Please login to vote");
+      return;
     }
   };
 }
