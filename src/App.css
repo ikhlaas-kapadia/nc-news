@@ -12,26 +12,26 @@
 
 .Header {
   background-color: rgb(247, 253, 162);
-  border: 1px solid black;
+  /* border: 1px solid black; */
   grid-area: Header;
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
 
 .Nav-Bar {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   grid-area: Nav-Bar;
 }
 
 .Main-Content {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   grid-area: Main-Content;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 .Login-Section {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .First-Letter {
@@ -108,12 +108,38 @@ Header h1 {
 /* <-------- Articles -------> */
 
 .Article-Grid {
+  /* border: 1px solid pink; */
   width: 100%;
   height: 100%;
   list-style: none;
   display: grid;
-  justify-content: start;
   grid-row-gap: 1em;
+  padding: 0;
+  justify-content: space-evenly;
+}
+.Article-Item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(63, 53, 53);
+  border-radius: 20px;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.Article-Info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.Article-Info p {
+  padding-left: 40px;
+  font-size: 0.8em;
+}
+
+.Main-Content h2 {
+  text-align: center;
+  margin-bottom: 4%;
 }
 
 .Sort-Component {
@@ -122,15 +148,6 @@ Header h1 {
   flex-direction: column;
   align-items: center;
   align-content: space-between;
-}
-
-.Article-Item {
-  border: 1px solid rgb(158, 129, 129);
-  border-radius: 20px;
-  width: 80%;
-
-  text-align: start;
-  padding: 5%;
 }
 
 /* <-------- Sort Component -------> */
