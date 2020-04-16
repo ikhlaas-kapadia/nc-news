@@ -10,32 +10,34 @@ class Sort extends Component {
   render() {
     const { author } = this.state;
     return (
-      <section>
-        Sort By:
-        <select onChange={(e) => this.handleChange(e, "sort_by")}>
-          <option>Select</option>
-          <option value="created_at">Date</option>
-          <option value="votes">Votes</option>
-          <option value="comment_count">Comments</option>
-        </select>
-        Order
-        <select onChange={(e) => this.handleChange(e, "order")}>
-          <option>Select</option>
-          <option value="asc">Ascending</option>
-          <option value="desc">Descending</option>
-        </select>
-        <br />
-        <label>
-          Filter by Author:
-          <input
-            value={author ? `${author}` : ``}
-            onChange={this.handleInput}
-            type="text"
-          ></input>
-        </label>
-        <button onClick={this.handleSearch}>Search</button>
-        <button onClick={this.handleClear}>Clear</button>
-      </section>
+      <>
+        <section className="Sort-Section">
+          Sort By:
+          <select onChange={(e) => this.handleChange(e, "sort_by")}>
+            <option value="created_at">Date</option>
+            <option value="votes">Votes</option>
+            <option value="comment_count">Comments</option>
+          </select>
+          Order
+          <select onChange={(e) => this.handleChange(e, "order")}>
+            <option value="desc">Descending</option>
+            <option value="asc">Ascending</option>
+          </select>
+          <br />
+        </section>
+        <section className="Filter-Section">
+          <label>
+            Filter by Author:
+            <input
+              value={author ? `${author}` : ``}
+              onChange={this.handleInput}
+              type="text"
+            ></input>
+          </label>
+          <button onClick={this.handleSearch}>Search</button>
+          <button onClick={this.handleClear}>Clear</button>
+        </section>
+      </>
     );
   }
 

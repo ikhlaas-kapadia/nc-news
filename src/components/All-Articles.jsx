@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import ArticleCard from "./Article-Cards";
-import Home from "./Home";
+import Welcome from "./Welcome";
 import Sort from "./Sort-Articles";
 import ErrorPage from "./Error-Page";
 import Loader from "./Loader";
@@ -44,8 +44,8 @@ class AllArticles extends Component {
       return <ErrorPage status={topicError.status} msg={topicError.msg} />;
 
     return (
-      <main>
-        <Home currentUser={currentUser} />
+      <main className="Main-Content">
+        {/* <Welcome currentUser={currentUser} /> */}
         {topic ? (
           <h2>{topic.toUpperCase()} Articles</h2>
         ) : (
@@ -54,21 +54,24 @@ class AllArticles extends Component {
         {isLoading ? (
           <Loader />
         ) : (
-          <section>
-            <Sort sortArticles={this.sortArticles} topic={topic} />
-
-            <ul className="Article-Grid">
-              {articles.map((article) => {
-                return (
-                  <ArticleCard
-                    key={article.article_id}
-                    article={article}
-                    currentUser={currentUser}
-                  />
-                );
-              })}
-            </ul>
-          </section>
+          <div>
+            <section className="Sort-Component">
+              <Sort sortArticles={this.sortArticles} topic={topic} />
+            </section>
+            <section>
+              <ul className="Article-Grid">
+                {articles.map((article) => {
+                  return (
+                    <ArticleCard
+                      key={article.article_id}
+                      article={article}
+                      currentUser={currentUser}
+                    />
+                  );
+                })}
+              </ul>
+            </section>
+          </div>
         )}
       </main>
     );
