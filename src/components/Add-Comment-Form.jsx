@@ -38,6 +38,7 @@ class CommentAdder extends Component {
     const { inputValue } = this.state;
     const newComment = { username: currentUser, body: inputValue };
     addComment(newComment);
+    this.setState({inputValue: ""})
   };
 }
 
