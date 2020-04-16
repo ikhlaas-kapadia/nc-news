@@ -3,19 +3,27 @@ import "../App.css";
 import * as api from "../utils/api";
 import Voter from "./Voter";
 import CommentAdder from "./Add-Comment-Form";
+import ErrorPage from "./Error-Page";
 
 class Comments extends Component {
-  state = { comments: [], isLoading: true };
+  state = { comments: [], isLoading: true, commentsError: null };
 
   componentDidMount() {
     const { article_id } = this.props;
-    api.getComments(article_id).then(({ comments }) => {
-      this.setState({ comments: comments, isLoading: false });
-    });
+    api
+      .getComments(article_id)
+      .then(({ comments }) => {
+        this.setState({ comments: comments, isLoading: false });
+      })
+      .catch((err) => {
+        console.dir(err);
+      });
   }
   render() {
-    const { comments, isLoading } = this.state;
+    const { comments, isLoading, commentsError } = this.state;
     const { currentUser } = this.props;
+    if (commentsError) return <ErrorPage />;
+    console.log(this.props);
     return isLoading ? (
       <div className="loader">Loading...</div>
     ) : (
