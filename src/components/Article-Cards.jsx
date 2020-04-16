@@ -19,7 +19,7 @@ const ArticleCard = (props) => {
       </Link>
       <p>Topic: {topic}</p>
       <p>Written by: {author}</p>
-      <p>Created: {moment(created_at).format("MMMM Do YYYY, h:mm:ss a")}</p>
+      <p>Created: {moment(created_at).format("MMMM Do YYYY")}</p>
       <p>Comments: {comment_count}</p>
       <p>Votes: {votes}</p>
     </li>
