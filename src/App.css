@@ -2,7 +2,7 @@
   /* text-align: center; */
   display: grid;
   width: 100%;
-  grid-template-rows: 180px auto 200px;
+  grid-template-rows: 100px auto 200px;
   grid-template-columns: 200px auto;
   grid-template-areas:
     "Header Header"
@@ -13,6 +13,8 @@
   background-color: rgb(247, 253, 162);
   border: 1px solid black;
   grid-area: Header;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 .Nav-Bar {
@@ -64,6 +66,30 @@
   text-decoration: none;
   font-size: 0.9em;
   padding: 0;
+}
+
+/* <------NavBar------> */
+Header h1 {
+  text-align: center;
+}
+
+.Login-Section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3%;
+  align-self: center;
+
+  align-items: center;
+  font-size: 0.7rem;
+}
+/* <-------- Login Form-------> */
+.User-Menu {
+  vertical-align: bottom;
+}
+.User-Menu::before {
+  content: "Login as ";
+  text-align: left;
+  color: black;
 }
 
 /* <------Loader------> */
@@ -156,12 +182,3 @@
 /* <-------- Comments Input Box -------> */
 /* .Comment-Input-Box {
 } */
-
-/* <-------- Login Form-------> */
-.User-Menu {
-  display: inline;
-}
-.User-Menu::before {
-  content: "Login as ";
-  color: black;
-}
