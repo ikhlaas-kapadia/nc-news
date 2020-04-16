@@ -33,8 +33,16 @@ class Comments extends Component {
                 votes={comment.votes}
                 id={comment.comment_id}
                 type="comments"
-                />
-                {currentUser === comment.author && <button>Delete</button>}
+              />
+              {currentUser === comment.author && (
+                <button
+                  onClick={() => {
+                    this.handleDelete(comment.comment_id);
+                  }}
+                >
+                  Delete
+                </button>
+              )}
             </div>
           );
         })}
@@ -52,11 +60,18 @@ class Comments extends Component {
     });
   };
 
-  // handleDelete = (comment_id) => {
-    // const {comments}= this.state
-    // const newCommentList = comments.filter((comment)=>{comme})
-    // api.deleteComment(comment_id).then((res) => console.log(res));
-  // };
+  handleDelete = (comment_id) => {
+    api.deleteComment(comment_id).then((res) =>
+      this.setState((currentState) => {
+        const filteredComments = currentState.comments.filter(
+          (comment) => comment.comment_id !== comment_id
+        );
+        return {
+          comments: filteredComments,
+        };
+      })
+    );
+  };
 }
 
 export default Comments;
