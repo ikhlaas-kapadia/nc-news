@@ -3,9 +3,10 @@ import * as api from "../utils/api";
 import ArticleCard from "./Article-Cards";
 import Home from "./Home";
 import Sort from "./Sort-Articles";
+import ErrorPage from "./Error-Page";
 
 class AllArticles extends Component {
-  state = { articles: [], isLoading: true };
+  state = { articles: [], isLoading: true, topicError: null };
 
   componentDidMount() {
     this.fetchArticles();
@@ -19,15 +20,27 @@ class AllArticles extends Component {
 
   fetchArticles = () => {
     const { topic } = this.props;
-    api.getArticles({ topic: topic }).then(({ articles }) => {
-      this.setState({ articles: articles, isLoading: false });
-    });
+    api
+      .getArticles({ topic: topic })
+      .then(({ articles }) => {
+        this.setState({ articles: articles, isLoading: false });
+      })
+      .catch((err) => {
+        const { status, data } = err.response;
+        this.setState({
+          topicError: {
+            status: status,
+            msg: `${data.msg}. Please specify a valid topic.`,
+          },
+        });
+      });
   };
 
   render() {
-    const { isLoading, articles } = this.state;
+    const { isLoading, articles, topicError } = this.state;
     const { topic, currentUser } = this.props;
-
+    if (topicError)
+      return <ErrorPage status={topicError.status} msg={topicError.msg} />;
     return (
       <main>
         <Home currentUser={currentUser} />
