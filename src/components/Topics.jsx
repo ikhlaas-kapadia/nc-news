@@ -18,7 +18,7 @@ class Topics extends Component {
         <h3>Trending Topics</h3>
 
         {isLoading ? (
-          <p>isloading...</p>
+          <div className="loader">Loading...</div>
         ) : (
           <div className="Topics-Container">
             {topics.map((topic) => (

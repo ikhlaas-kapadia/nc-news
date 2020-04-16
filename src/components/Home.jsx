@@ -11,7 +11,6 @@ const Home = (props) => {
           ? `Welcome to NC News Stranger`
           : `Welcome to NC News ${currentUser}`}
       </h2>
-
       <Topics />
     </main>
   );
