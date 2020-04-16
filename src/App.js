@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import AllArticles from "./components/All-Articles";
 
 import SingleArticle from "./components/Single-Article";
+import ErrorPage from "./components/Error-Page";
 
 class App extends Component {
   state = {
@@ -33,6 +34,11 @@ class App extends Component {
           <SingleArticle
             currentUser={currentUser}
             path="/articles/:article_id/*"
+          />
+          <ErrorPage
+            default
+            status={404}
+            msg="Page not found, please enter a valid address"
           />
         </Router>
       </div>
