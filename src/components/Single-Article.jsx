@@ -4,25 +4,38 @@ import * as api from "../utils/api";
 import { Router, Link } from "@reach/router";
 import Comments from "./Comments";
 import Voter from "./Voter";
+import ErrorPage from "./Error-Page";
 
 class SingleArticle extends Component {
   state = {
     article: {},
     isLoading: true,
+    articleError: null,
   };
   componentDidMount() {
     const { article_id } = this.props;
+
     api
       .getArticleById(article_id)
       .then(({ article }) =>
         this.setState({ article: article, isLoading: false })
-      );
+      )
+      .catch((err) => {
+        const { status, data } = err.response;
+        this.setState({
+          articleError: {
+            status: status,
+            msg: `${data.msg}. Please enter a valid ID`,
+          },
+        });
+      });
   }
 
   render() {
-    const { article, isLoading } = this.state;
+    const { article, isLoading, articleError } = this.state;
     const { currentUser } = this.props;
-
+    if (articleError)
+      return <ErrorPage status={articleError.status} msg={articleError.msg} />;
     return (
       <section>
         {isLoading ? (
