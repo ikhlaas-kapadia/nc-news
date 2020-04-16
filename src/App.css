@@ -1,10 +1,31 @@
-.App {
-  text-align: center;
+.Wrapper {
+  /* text-align: center; */
   display: grid;
+  width: 100%;
+  grid-template-rows: 180px auto 200px;
+  grid-template-columns: 200px auto;
+  grid-template-areas:
+    "Header Header"
+    "Nav-Bar Main-Content ";
 }
 
-header {
+.Header {
   background-color: rgb(247, 253, 162);
+  border: 1px solid black;
+  grid-area: Header;
+}
+
+.Nav-Bar {
+  border: 1px solid green;
+  grid-area: Nav-Bar;
+}
+
+.Main-Content {
+  border: 1px solid blue;
+  grid-area: Main-Content;
+}
+.Login-Section {
+  border: 1px solid red;
 }
 
 .First-Letter {
@@ -49,16 +70,18 @@ header {
 
 .loader {
   border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid #30e4eb;
+  border-bottom: 16px solid #f14747;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: spin 2s linear infinite;
-  margin: 0 auto;
+  width: 1em;
+  height: 1em;
+  animation: spin 1s linear infinite;
+  margin: 1% auto;
+  font-size: 0.9em;
 }
 
 @keyframes spin {
-  0% {
+  00% {
     transform: rotate(0deg);
   }
   100% {
@@ -113,6 +136,10 @@ header {
   justify-content: left;
 }
 
+.User-Comment {
+  background-color: rgb(200, 235, 236);
+}
+/* <-------- Votes -------> */
 .Vote-Btn {
   height: 90%;
   margin: 0 2px;
