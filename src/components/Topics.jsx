@@ -14,26 +14,23 @@ class Topics extends Component {
     const { topics, isLoading } = this.state;
 
     return (
-      <section>
-        <h3>Trending Topics</h3>
-
+      <nav>
         {isLoading ? (
           <div className="loader">Loading...</div>
         ) : (
-          <div className="Topics-Container">
+          <div className="Nav-Links">
+            <Link className="Link" to="/">
+              Home
+            </Link>
             {topics.map((topic) => (
-              <Link key={topic.slug} to={`/articles/topic/${topic.slug}`}>
+              <Link className="Link" key={topic.slug} to={`/articles/topic/${topic.slug}`}>
                 {" "}
-                <div id={topic.slug} className="Topic-Box">
-                  {topic.slug.toUpperCase()}
-                  <br></br>
-                  <p>{topic.description}</p>
-                </div>
+                {topic.slug.toUpperCase()}
               </Link>
             ))}
           </div>
         )}
-      </section>
+      </nav>
     );
   }
 }
