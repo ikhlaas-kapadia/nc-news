@@ -135,6 +135,6 @@ header {
   display: inline;
 }
 .User-Menu::before {
-  content: "Select User";
+  content: "Login as ";
   color: black;
 }
