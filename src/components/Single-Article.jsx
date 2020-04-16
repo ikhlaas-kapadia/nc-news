@@ -25,7 +25,7 @@ class SingleArticle extends Component {
         this.setState({
           articleError: {
             status: status,
-            msg: `${data.msg}. Please enter a valid ID`,
+            msg: `${data.msg}. Please enter a valid article ID`,
           },
         });
       });
@@ -65,6 +65,11 @@ class SingleArticle extends Component {
         )}
         <Router>
           <Comments currentUser={currentUser} path="comments" />
+          <ErrorPage
+            default
+            status={400}
+            msg="Page not found, please enter a valid address"
+          />
         </Router>
       </section>
     );
