@@ -4,6 +4,7 @@ import * as api from "../utils/api";
 import Voter from "./Voter";
 import CommentAdder from "./Add-Comment-Form";
 import ErrorPage from "./Error-Page";
+import Loader from "./Loader";
 
 class Comments extends Component {
   state = { comments: [], isLoading: true, commentsError: null };
@@ -25,7 +26,7 @@ class Comments extends Component {
     if (commentsError) return <ErrorPage />;
     console.log(this.props);
     return isLoading ? (
-      <div className="loader">Loading...</div>
+      <Loader/>
     ) : (
       <section className="Comments">
         <h4>Comments</h4>

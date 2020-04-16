@@ -4,6 +4,7 @@ import ArticleCard from "./Article-Cards";
 import Home from "./Home";
 import Sort from "./Sort-Articles";
 import ErrorPage from "./Error-Page";
+import Loader from "./Loader";
 
 class AllArticles extends Component {
   state = { articles: [], isLoading: true, topicError: null };
@@ -41,6 +42,7 @@ class AllArticles extends Component {
     const { topic, currentUser } = this.props;
     if (topicError)
       return <ErrorPage status={topicError.status} msg={topicError.msg} />;
+
     return (
       <main>
         <Home currentUser={currentUser} />
@@ -49,12 +51,12 @@ class AllArticles extends Component {
         ) : (
           <h2>All Articles</h2>
         )}
-        <Sort sortArticles={this.sortArticles} topic={topic} />
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <section>
+            <Sort sortArticles={this.sortArticles} topic={topic} />
 
-        <section>
-          {isLoading ? (
-            <div className="loader">Loading...</div>
-          ) : (
             <ul className="Article-Grid">
               {articles.map((article) => {
                 return (
@@ -66,8 +68,8 @@ class AllArticles extends Component {
                 );
               })}
             </ul>
-          )}
-        </section>
+          </section>
+        )}
       </main>
     );
   }

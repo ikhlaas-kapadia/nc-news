@@ -5,6 +5,7 @@ import { Router, Link } from "@reach/router";
 import Comments from "./Comments";
 import Voter from "./Voter";
 import ErrorPage from "./Error-Page";
+import Loader from "./Loader";
 
 class SingleArticle extends Component {
   state = {
@@ -39,7 +40,7 @@ class SingleArticle extends Component {
     return (
       <section>
         {isLoading ? (
-          <div className="loader">Loading...</div>
+          <Loader/>
         ) : (
           <div className="Single-Article-Container">
             <h4>{article.title}</h4>
