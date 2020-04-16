@@ -1,5 +1,4 @@
 import React from "react";
-import Topics from "./NavBar";
 
 const Welcome = (props) => {
   const { currentUser } = props;

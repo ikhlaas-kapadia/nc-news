@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import ArticleCard from "./Article-Cards";
-import Welcome from "./Welcome";
 import Sort from "./Sort-Articles";
 import ErrorPage from "./Error-Page";
 import Loader from "./Loader";
