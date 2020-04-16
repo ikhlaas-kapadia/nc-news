@@ -28,13 +28,13 @@ class Comments extends Component {
               <h4>{comment.author}</h4>
               <article>{comment.body}</article>
               <p>Posted: {comment.created_at}</p>
-              {currentUser === comment.author && <button>Delete</button>}
               <Voter
                 currentUser={currentUser}
                 votes={comment.votes}
                 id={comment.comment_id}
                 type="comments"
-              />
+                />
+                {currentUser === comment.author && <button>Delete</button>}
             </div>
           );
         })}
