@@ -81,7 +81,7 @@ header {
   border: 1px solid rgb(158, 129, 129);
   border-radius: 20px;
   width: 80%;
-  
+
   text-align: start;
   padding: 5%;
 }
@@ -124,4 +124,17 @@ header {
   background-color: rgba(236, 247, 138, 0.63);
   color: red;
   border: 1px solid rgb(83, 236, 63);
+}
+
+/* <-------- Comments Input Box -------> */
+/* .Comment-Input-Box {
+} */
+
+/* <-------- Login Form-------> */
+.User-Menu {
+  display: inline;
+}
+.User-Menu::before {
+  content: "Select User";
+  color: black;
 }
