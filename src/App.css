@@ -31,7 +31,6 @@
   align-items: stretch;
 }
 
-
 .First-Letter {
   color: rgb(207, 64, 64);
 }
@@ -113,7 +112,8 @@ Header h1 {
   display: grid;
   grid-row-gap: 1em;
   padding: 0;
-  justify-content: space-evenly;
+  justify-content: stretch;
+  align-items: flex-start;
 }
 .Article-Item {
   display: flex;
@@ -121,8 +121,7 @@ Header h1 {
   border: 1px solid rgb(63, 53, 53);
   border-radius: 20px;
   align-items: center;
-  width: 100%;
-  
+  width: 90%;
 }
 
 .Article-Info {
@@ -130,9 +129,20 @@ Header h1 {
   flex-direction: row;
   align-items: flex-start;
 }
+.Single-Article-Link,
+.Single-Article-Link:visited {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 1px;
+}
 .Article-Info p {
-  padding-left: 40px;
+  margin: 15px;
   font-size: 0.8em;
+  height: 100%;
+  /* border: 1px solid black; */
+  text-align: center;
+  line-height: 2em;
+  letter-spacing: 1px;
 }
 
 .Main-Content h2 {
