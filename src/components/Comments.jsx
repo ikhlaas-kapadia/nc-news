@@ -5,6 +5,7 @@ import Voter from "./Voter";
 import CommentAdder from "./Add-Comment-Form";
 import ErrorPage from "./Error-Page";
 import Loader from "./Loader";
+import moment from "moment";
 
 class Comments extends Component {
   state = { comments: [], isLoading: true, commentsError: null };
@@ -47,7 +48,7 @@ class Comments extends Component {
                   : "Your comment"}
               </h4>
               <article>{comment.body}</article>
-              <p>Posted: {comment.created_at}</p>
+              <p>Posted: {moment(comment.created_at).format("MMMM Do YYYY")}</p>
               <Voter
                 currentUser={currentUser}
                 votes={comment.votes}

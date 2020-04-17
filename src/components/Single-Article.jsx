@@ -6,6 +6,7 @@ import Comments from "./Comments";
 import Voter from "./Voter";
 import ErrorPage from "./Error-Page";
 import Loader from "./Loader";
+import moment from "moment";
 
 class SingleArticle extends Component {
   state = {
@@ -55,7 +56,7 @@ class SingleArticle extends Component {
               />
               <li>Topic: {article.topic}</li>
               <li>Written By: {article.author}</li>
-              <li>Created: {article.created_at}</li>
+              <li>Created: {moment(article.created_at).format("MMMM Do YYYY")}</li>
               <li>
                 Comments: {article.comment_count}{" "}
                 <Link to="comments">
