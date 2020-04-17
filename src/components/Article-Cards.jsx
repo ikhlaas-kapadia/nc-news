@@ -22,6 +22,7 @@ const ArticleCard = (props) => {
       </header>
       <article>
         <p>{articleSnippet.slice(0, 250)}...</p>
+        <Link to={`/articles/${article_id}`}>View Article</Link>
       </article>
       <div className="Article-Info">
         <p># {topic}</p>
