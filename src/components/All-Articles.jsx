@@ -36,13 +36,11 @@ class AllArticles extends Component {
           const id = article.article_id;
           return api.getArticleById(id).then(({ article }) => article.body);
         });
-        return snippet;
+        return Promise.all(snippet);
       })
-      .then((articleSnippets) => Promise.all(articleSnippets))
       .then((snippets) =>
         this.setState({ articleSnippet: snippets, isLoading: false })
       )
-
       .catch((err) => {
         const { status, data } = err.response;
         this.setState({
