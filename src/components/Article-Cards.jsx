@@ -11,14 +11,18 @@ const ArticleCard = (props) => {
     title,
     votes,
   } = props.article;
+  const { articleSnippet } = props;
 
   return (
     <li className="Article-Item">
       <header>
-        <Link to={`/articles/${article_id}`}>
+        <Link to={`/articles/${article_id}`} className="Single-Article-Link">
           <h4>{title}</h4>
         </Link>
       </header>
+      <article>
+        <p>{articleSnippet.slice(0, 250)}...</p>
+      </article>
       <div className="Article-Info">
         <p># {topic}</p>
         <p>✒️{author}</p>

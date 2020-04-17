@@ -6,7 +6,12 @@ import ErrorPage from "./Error-Page";
 import Loader from "./Loader";
 
 class AllArticles extends Component {
-  state = { articles: [], isLoading: true, topicError: null };
+  state = {
+    articles: [],
+    isLoading: true,
+    topicError: null,
+    articleSnippet: [],
+  };
 
   componentDidMount() {
     this.fetchArticles();
@@ -23,8 +28,21 @@ class AllArticles extends Component {
     api
       .getArticles({ topic: topic })
       .then(({ articles }) => {
-        this.setState({ articles: articles, isLoading: false });
+        this.setState({ articles: articles });
+        return articles;
       })
+      .then((articles) => {
+        const snippet = articles.map((article) => {
+          const id = article.article_id;
+          return api.getArticleById(id).then(({ article }) => article.body);
+        });
+        return snippet;
+      })
+      .then((articleSnippets) => Promise.all(articleSnippets))
+      .then((snippets) =>
+        this.setState({ articleSnippet: snippets, isLoading: false })
+      )
+
       .catch((err) => {
         const { status, data } = err.response;
         this.setState({
@@ -37,7 +55,7 @@ class AllArticles extends Component {
   };
 
   render() {
-    const { isLoading, articles, topicError } = this.state;
+    const { isLoading, articles, topicError, articleSnippet } = this.state;
     const { topic, currentUser } = this.props;
     if (topicError)
       return <ErrorPage status={topicError.status} msg={topicError.msg} />;
@@ -59,12 +77,13 @@ class AllArticles extends Component {
             </section>
             <section>
               <ul className="Article-Grid">
-                {articles.map((article) => {
+                {articles.map((article, index) => {
                   return (
                     <ArticleCard
                       key={article.article_id}
                       article={article}
                       currentUser={currentUser}
+                      articleSnippet={articleSnippet[index]}
                     />
                   );
                 })}
