@@ -56,7 +56,9 @@ class SingleArticle extends Component {
               />
               <li>Topic: {article.topic}</li>
               <li>Written By: {article.author}</li>
-              <li>Created: {moment(article.created_at).format("MMMM Do YYYY")}</li>
+              <li>
+                Created: {moment(article.created_at).format("MMMM Do YYYY")}
+              </li>
               <li>
                 Comments: {article.comment_count}{" "}
                 <Link to="comments">
