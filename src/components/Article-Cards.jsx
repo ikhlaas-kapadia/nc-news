@@ -16,13 +16,15 @@ const ArticleCard = (props) => {
   return (
     <li className="Article-Item">
       <header>
-        <Link to={`/articles/${article_id}`} className="Single-Article-Link">
-          <h4>{title}</h4>
-        </Link>
+        <h4>{title}</h4>
       </header>
       <article>
-        <p>{articleSnippet.slice(0, 250)}...</p>
-        <Link to={`/articles/${article_id}`}>View Article</Link>
+        <p>
+          {articleSnippet.slice(0, 250)}...
+        </p>
+          <Link to={`/articles/${article_id}`} className="Single-Article-Link">
+            View Article
+          </Link>
       </article>
       <div className="Article-Info">
         <p># {topic}</p>

@@ -70,11 +70,11 @@ class SingleArticle extends Component {
         )}
         <Router>
           <Comments currentUser={currentUser} path="comments" />
-          <ErrorPage
+          {/* <ErrorPage
             default
             status={400}
             msg="Page not found, please enter a valid address"
-          />
+          /> */}
         </Router>
       </section>
     );
