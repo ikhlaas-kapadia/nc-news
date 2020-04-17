@@ -13,9 +13,8 @@ class NavBar extends Component {
   }
   render() {
     const { topics, isLoading } = this.state;
-    if (isLoading) return <Loader />;
+    // if (isLoading) return <Loader />;
     return (
-      
       <nav className="Nav-Bar">
         <div className="Nav-Links">
           <Link className="Link" to="/">
