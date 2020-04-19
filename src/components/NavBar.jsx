@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import { Link } from "@reach/router";
 
-
 class NavBar extends Component {
   state = { topics: [], isLoading: true };
 
@@ -12,8 +11,8 @@ class NavBar extends Component {
     });
   }
   render() {
-    const { topics, isLoading } = this.state;
-    // if (isLoading) return <Loader />;
+    const { topics } = this.state;
+
     return (
       <nav className="Nav-Bar">
         <div className="Nav-Links">
