@@ -8,7 +8,8 @@ class Voter extends Component {
   };
 
   render() {
-    const { optimisticVote } = this.state;
+    const { optimisticVote, loggedIn } = this.state;
+    const { currentUser } = this.props;
 
     return (
       <section>
@@ -17,7 +18,10 @@ class Voter extends Component {
           disabled={optimisticVote < 0}
           className={optimisticVote === -1 ? "Vote-Btn Voted" : "Vote-Btn "}
         >
-          <span role="img" aria-label="vote up"> 👎</span>
+          <span role="img" aria-label="vote up">
+            {" "}
+            👎
+          </span>
         </button>
         Votes: {this.props.votes + optimisticVote}{" "}
         <button
@@ -26,8 +30,13 @@ class Voter extends Component {
           disabled={optimisticVote > 0}
           className={optimisticVote === 1 ? "Vote-Btn Voted" : "Vote-Btn "}
         >
-          <span role="img" aria-label="vote down">👍</span>
+          <span role="img" aria-label="vote down">
+            👍
+          </span>
         </button>
+          {loggedIn === false && !currentUser && (
+            <p className="Login-msg">Please login to cast your vote</p>
+          )}
       </section>
     );
   }
@@ -40,7 +49,7 @@ class Voter extends Component {
       });
       api.updateVote(id, vote, type);
     } else {
-      alert("Please login to vote");
+      this.setState({ loggedIn: false });
       return;
     }
   };
