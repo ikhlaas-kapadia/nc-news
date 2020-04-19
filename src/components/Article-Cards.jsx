@@ -19,16 +19,14 @@ const ArticleCard = (props) => {
         <h4>{title}</h4>
       </header>
       <article>
-        <p>
-          {articleSnippet.slice(0, 250)}...
-        </p>
-          <Link to={`/articles/${article_id}`} className="Single-Article-Link">
-            View Article
-          </Link>
+        <p>{articleSnippet.slice(0, 250)}....</p>
+        <Link to={`/articles/${article_id}`} className="Single-Article-Link">
+          View Article
+        </Link>
       </article>
       <div className="Article-Info">
         <p># {topic}</p>
-        <p>✒️{author}</p>
+        <p>✒️{author} </p>
         <p>Created: {moment(created_at).format("MMMM Do YYYY")}</p>
         <p>Comments: {comment_count}</p>
         <p>Votes: {votes}</p>

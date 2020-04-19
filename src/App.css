@@ -1,23 +1,13 @@
 /* <-------App structure -----> */
 .Wrapper {
-  /* text-align: center; */
   color: black;
   align-content: center;
   display: grid;
-  /* repeat(auto-fit, minmax(240px, 1fr)) */
   grid-template-rows: 100px auto;
   grid-template-columns: 150px auto;
   grid-template-areas: "Header Header" "Nav-Bar Main-Content";
 }
 
-/*Colours
-#FFFFFF - white
-#DD2C00 - ferrari red
-#FF5722 - Giant Orange
-#00BCD4 - Turquoise surf
-#B2EBF2 - Pale Turquoise
-
-*/
 .Header {
   background-color: #00203fff;
   grid-area: Header;
@@ -30,12 +20,14 @@
 }
 
 .Nav-Bar {
-  background-color: #adefd1ff;
+  /* background-color: #adefd1ff; */
+  background-color: none;
   grid-area: Nav-Bar;
 }
 
 .Main-Content {
-  background-color: #adefd1ff;
+  /* background-color: #adefd1ff; */
+  background-color: none;
   width: 100%;
   grid-area: Main-Content;
   display: flex;
@@ -135,7 +127,7 @@ Header h1 {
 }
 
 .Article-Item {
-  background-color: #f4f7f6;
+  background-color: rgb(173, 239, 209);
   display: flex;
   flex-direction: column;
   border: 1px solid rgb(63, 53, 53);
@@ -144,21 +136,37 @@ Header h1 {
   justify-content: center;
   width: 90%;
   margin: 0 auto;
-  color: #00203fff;
+  color: black;
 }
 
 .Article-Item article {
-  align-content: left;
+  width: 100%;
   padding: 0px auto;
-  width: 90%;
   letter-spacing: 1px;
   font-size: 0.8rem;
+}
+.Article-Item article p {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .Article-Info {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 1rem;
+}
+.Article-Info p {
+  color: #00203fff;
+  margin: 15px 15px;
+  font-size: 0.7rem;
+  font-weight: bolder;
+  height: 100%;
+  text-align: center;
+  line-height: 2em;
+  letter-spacing: 1px;
 }
 .Single-Article-Link,
 .Single-Article-Link:visited {
@@ -168,30 +176,20 @@ Header h1 {
   border: 1px black solid;
   border-radius: 5px;
   padding: 6px;
-  background-color: rgba(0, 31, 63, 0.897);
+  background-color: rgba(0, 31, 63, 0.767);
   color: white;
+  margin-left: 15px;
 }
-
+.Article-Item header {
+  margin: auto 15px;
+}
 h4 {
-  letter-spacing: 1px;
-}
-.Article-Info p {
-  color: rgb(107, 106, 106);
-  color: #00203fff;
-  margin: 15px;
-  font-size: 0.7rem;
-  font-weight: bolder;
-  height: 100%;
-  text-align: center;
-  line-height: 2em;
   letter-spacing: 1px;
 }
 
 .Main-Content h2 {
-  width: 90%;
+  width: 100%;
   text-align: center;
-
-  margin-bottom: 2%;
 }
 
 .Sort-Component {
@@ -227,6 +225,7 @@ h4 {
   margin: 2% auto;
   border: 1px solid black;
   padding: 1% 2%;
+  background-color: #adefd1ff;
 }
 
 .Article-Items {
