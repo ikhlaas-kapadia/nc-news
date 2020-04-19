@@ -79,11 +79,6 @@ class SingleArticle extends Component {
         <div className="Comments-Container">
           <Router>
             <Comments currentUser={currentUser} path="comments" />
-            {/* <ErrorPage
-            default
-            status={400}
-            msg="Page not found, please enter a valid address"
-          /> */}
           </Router>
         </div>
       </section>

@@ -43,18 +43,15 @@ Header h1 {
 }
 /* <-------- Login Form-------> */
 .Login-Section {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
+  width: 40%;
   padding-top: 3%;
-  align-self: center;
-  align-items: center;
+  text-align: left;
   font-size: 0.8rem;
 }
 
 .User-Menu {
+  /* border: 1px solid red; */
   color: rgb(255, 255, 255);
-  vertical-align: bottom;
 }
 .User-Menu::before {
   content: "Login as ";
@@ -361,7 +358,25 @@ h4 {
   }
 }
 
-@media only screen and (max-width: 510px) {
+@media only screen and (max-width: 680px) {
+  .Wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .Nav-Links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    /* margin: 0 auto; */
+  }
+  .Link,
+  .Link:visited {
+    font-size: 0.6rem;
+    margin: 2% auto;
+    padding: 2%;
+  }
+
   .Article-Item {
     align-items: flex-start;
     justify-content: center;
@@ -385,22 +400,8 @@ h4 {
     padding: 3px;
   }
 
-  .Wrapper {
-    grid-template-columns: 80px auto;
-  }
-
-  .Link,
-  .Link:visited {
-    font-size: 0.6rem;
-    margin: 5%;
-    padding: 4%;
-  }
   .Login-Section {
-    font-size: 0.4rem;
-    padding-right: 10px;
-    /* width: fit-content; */
-
-    /* align-items: flex-end; */
+    font-size: 0.5rem;
   }
 
   .Header {
