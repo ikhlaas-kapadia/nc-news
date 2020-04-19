@@ -7,8 +7,9 @@ class CommentAdder extends Component {
   };
   render() {
     const { inputValue } = this.state;
+    const { currentUser } = this.props;
     return (
-      <form  className="Comment-Form" action="" onSubmit={this.handleSubmit}>
+      <form className="Comment-Form" action="" onSubmit={this.handleSubmit}>
         <label>
           {" "}
           Post a Comment:
@@ -21,7 +22,7 @@ class CommentAdder extends Component {
             cols="30"
             value={inputValue}
           />
-          <button>Add</button>
+          <button>{currentUser ? "Add" : "Login to add your comment"}</button>
         </label>
       </form>
     );
@@ -29,11 +30,12 @@ class CommentAdder extends Component {
   handleInputvalue = (e) => {
     this.setState({ inputValue: e.target.value });
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
     const { addComment, currentUser } = this.props;
     if (!currentUser) {
-      alert("Please login to post comments");
+      console.dir(e.target);
       return;
     }
     const { inputValue } = this.state;
