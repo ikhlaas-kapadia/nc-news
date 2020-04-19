@@ -60,7 +60,6 @@ class AllArticles extends Component {
 
     return (
       <main className="Main-Content">
-        {/* <Welcome currentUser={currentUser} /> */}
         {topic ? (
           <h2>{topic.toUpperCase()} Articles</h2>
         ) : (
