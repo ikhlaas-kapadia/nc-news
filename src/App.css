@@ -12,10 +12,8 @@
   background-color: #00203fff;
   grid-area: Header;
   /* border: 1px solid black; */
-  display: grid;
-  grid-template-columns: 1fr 200px;
-  align-items: center;
-  align-content: center;
+  display: flex;
+  flex-direction: row;
   color: rgb(255, 255, 255);
 }
 
@@ -26,7 +24,6 @@
 }
 
 .Main-Content {
-  /* background-color: #adefd1ff; */
   background-color: none;
   width: 100%;
   grid-area: Main-Content;
@@ -39,12 +36,14 @@ Header h1 {
   text-align: start;
   font-size: 250%;
   padding-left: 10%;
+  width: 80%;
 }
 .First-Letter {
   color: #f18f01;
 }
 /* <-------- Login Form-------> */
 .Login-Section {
+  width: 20%;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -90,6 +89,10 @@ Header h1 {
   color: white;
 }
 
+.options {
+  color: rgb(255, 255, 255);
+}
+
 /* <------Loader------> */
 
 .loader {
@@ -117,7 +120,7 @@ Header h1 {
 
 .Article-Grid {
   /* border: 1px solid pink; */
-
+  font-size: 1em;
   width: 100%;
   height: 100%;
   list-style: none;
@@ -157,10 +160,12 @@ Header h1 {
   margin: 0 auto;
   width: 100%;
   font-size: 1rem;
+
+  margin-top: 10px;
 }
 .Article-Info p {
   color: #00203fff;
-  margin: 15px 15px;
+  margin: 0px 15px;
   font-size: 0.7rem;
   font-weight: bolder;
   height: 100%;
@@ -170,7 +175,7 @@ Header h1 {
 }
 .Single-Article-Link,
 .Single-Article-Link:visited {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   text-decoration: none;
   letter-spacing: 1px;
   border: 1px black solid;
@@ -181,10 +186,12 @@ Header h1 {
   margin-left: 15px;
 }
 .Article-Item header {
-  margin: auto 15px;
+  margin: 0 15px;
+  padding: 0;
 }
 h4 {
   letter-spacing: 1px;
+  margin-bottom: 0;
 }
 
 .Main-Content h2 {
@@ -192,8 +199,8 @@ h4 {
   text-align: center;
 }
 
+/* <-------- Sort Component -------> */
 .Sort-Component {
-  /* background-color: cadetblue; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,21 +208,20 @@ h4 {
   width: 90%;
 }
 
-/* <-------- Sort Component -------> */
-
 .Sort-Section {
   display: flex;
   flex-direction: row;
   align-content: center;
   margin-bottom: 1%;
+  margin-left: 2%;
 }
 
-.Sort-Section select {
+.Sort-Section {
   margin-right: 10px;
 }
 
-.Filter-Section input {
-  margin-right: 10px;
+.Filter-Section {
+  margin-left: 2%;
 }
 
 /* <-------- Single Article -------> */
@@ -226,24 +232,30 @@ h4 {
   border: 1px solid black;
   padding: 1% 2%;
   background-color: #adefd1ff;
+  letter-spacing: 1px;
+  font-size: 1rem;
 }
 
-.Article-Items {
-  list-style: none;
-  display: grid;
-  margin: 4% auto;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: last baseline;
+.Article-Body {
+  letter-spacing: 1px;
+  word-spacing: 2px;
 }
-
 /* <-------- Comments -------> */
+.Comments {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+}
 .Comment-Box {
-  width: 70%;
-  margin: 2% auto;
+  margin: 1% auto;
+  width: 90%;
   border: 1px solid black;
   padding: 1%;
   text-align: left;
-  justify-content: left;
+  /* justify-content: left; */
 }
 
 .User-Comment {
@@ -266,3 +278,81 @@ h4 {
 /* <-------- Comments Input Box -------> */
 /* .Comment-Input-Box {
 } */
+
+@media only screen and (max-width: 830px) {
+  .Article-Info {
+    flex-direction: column;
+    align-items: left;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  .Article-Info p {
+    margin: 0.5% 0 0.5% 3%;
+    font-size: 0.7rem;
+    font-weight: bolder;
+    height: 100%;
+    text-align: justify;
+    line-height: 2em;
+    letter-spacing: 1px;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .Sort-Component {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 0.6rem;
+  }
+  .Sort-Section {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .Article-Item {
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    font-size: 0.6rem;
+  }
+
+  .Article-Item article {
+    font-size: 0.4rem;
+  }
+  .Article-Info p {
+    margin-left: 15px;
+    font-size: 0.3rem;
+    font-weight: bolder;
+  }
+
+  .Single-Article-Link,
+  .Single-Article-Link:visited {
+    font-size: 0.4rem;
+    padding: 3px;
+  }
+
+  .Wrapper {
+    grid-template-columns: 100px auto;
+  }
+
+  .Link,
+  .Link:visited {
+    font-size: 0.6rem;
+    margin: 10%;
+    padding: 4%;
+  }
+  .Login-Section {
+    font-size: 0.5rem;
+    width: fit-content;
+    /* align-items: flex-end; */
+  }
+
+  .Header {
+    align-items: center;
+    /* align-content: flex-end; */
+  }
+}

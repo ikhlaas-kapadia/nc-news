@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import { Link } from "@reach/router";
-import Loader from "./Loader";
+
 
 class NavBar extends Component {
   state = { topics: [], isLoading: true };

@@ -40,42 +40,46 @@ class SingleArticle extends Component {
     if (articleError)
       return <ErrorPage status={articleError.status} msg={articleError.msg} />;
     return (
-      <section>
+      <section className="Single-Article-Container">
         {isLoading ? (
           <Loader />
         ) : (
-          <div className="Single-Article-Container">
+          <div className="Article-Container">
             <h4>{article.title}</h4>
-            <p>{article.body}</p>
-            <ul className="Article-Items">
-              <Voter
-                currentUser={currentUser}
-                votes={article.votes}
-                id={article.article_id}
-                type="articles"
-              />
-              <li>Topic: {article.topic}</li>
-              <li>Written By: {article.author}</li>
-              <li>
+            <article className="Article-Body">
+              <p>{article.body}</p>
+            </article>
+            <Voter
+              currentUser={currentUser}
+              votes={article.votes}
+              id={article.article_id}
+              type="articles"
+            />
+            <div className="Article-Info">
+              <p>#{article.topic}</p>
+              <p>✒️{article.author}</p>
+              <p>
                 Created: {moment(article.created_at).format("MMMM Do YYYY")}
-              </li>
-              <li>
+              </p>
+              <p>
                 Comments: {article.comment_count}{" "}
                 <Link to="comments">
                   <button>View comments</button>
                 </Link>
-              </li>
-            </ul>
+              </p>
+            </div>
           </div>
         )}
-        <Router>
-          <Comments currentUser={currentUser} path="comments" />
-          {/* <ErrorPage
+        <div className="Comments-Container">
+          <Router>
+            <Comments currentUser={currentUser} path="comments" />
+            {/* <ErrorPage
             default
             status={400}
             msg="Page not found, please enter a valid address"
           /> */}
-        </Router>
+          </Router>
+        </div>
       </section>
     );
   }

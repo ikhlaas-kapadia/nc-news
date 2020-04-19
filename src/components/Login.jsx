@@ -11,7 +11,7 @@ class Login extends Component {
       <section className="Login-Section">
         {!currentUser ? (
           <div className="User-Menu">
-            <select onChange={this.handleInputValue}>
+            <select onChange={this.handleInputValue} className="options">
               <option>Select</option>
               <option value="jessjelly">jessjelly</option>
               <option value="happyamy2016">happyamy2016</option>
