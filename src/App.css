@@ -44,13 +44,12 @@ Header h1 {
 /* <-------- Login Form-------> */
 .Login-Section {
   width: 20%;
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   padding-top: 3%;
-  align-self: flex-start;
-  align-items: flex-start;
-  font-size: 0.9rem;
+  align-self: center;
+  align-items: center;
+  font-size: 0.8rem;
 }
 
 .User-Menu {
@@ -346,13 +345,18 @@ h4 {
     padding: 4%;
   }
   .Login-Section {
-    font-size: 0.5rem;
-    width: fit-content;
+    font-size: 0.4rem;
+    padding-right: 10px;
+    /* width: fit-content; */
+
     /* align-items: flex-end; */
   }
 
   .Header {
     align-items: center;
     /* align-content: flex-end; */
+  }
+  .Header h1 {
+    font-size: 2rem;
   }
 }
