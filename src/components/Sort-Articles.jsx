@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
+import UserDropdown from "./User-Dropdown";
 
 class Sort extends Component {
   state = {
@@ -8,7 +9,6 @@ class Sort extends Component {
     author: undefined,
   };
   render() {
-    const { author } = this.state;
     return (
       <>
         <section className="Sort-Section">
@@ -28,14 +28,8 @@ class Sort extends Component {
         <section className="Filter-Section">
           <label>
             Filter by Author:
-            <input
-              value={author ? `${author}` : ``}
-              onChange={this.handleInput}
-              type="text"
-            ></input>
+            <UserDropdown handleInputValue={this.handleInput} />
           </label>
-          <button onClick={this.handleSearch}>Search</button>
-          <button onClick={this.handleClear}>Clear</button>
         </section>
       </>
     );
@@ -43,11 +37,9 @@ class Sort extends Component {
 
   handleInput = (e) => {
     const { value } = e.target;
-    this.setState({ author: value });
-  };
-
-  handleSearch = (e) => {
-    this.fetchSortedArticles();
+    this.setState({ author: value }, () => {
+      this.fetchSortedArticles();
+    });
   };
 
   handleClear = (e) => {
@@ -67,17 +59,12 @@ class Sort extends Component {
     const { sortArticles, topic } = this.props;
     api
       .getArticles({
-        author: author,
+        author: author !== "None / Clear" ? author : undefined,
         topic: topic,
         sort_by: sort_by,
         order: order,
       })
-      .then(({ articles }) => sortArticles(articles))
-      .catch((err) =>
-        alert(
-          `Author ${err.response.data.msg}. Please refer to author names below`
-        )
-      );
+      .then(({ articles }) => sortArticles(articles));
   };
 }
 
