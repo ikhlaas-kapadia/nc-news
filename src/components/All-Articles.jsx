@@ -25,9 +25,20 @@ class AllArticles extends Component {
 
   fetchArticles = () => {
     const { topic } = this.props;
-    api.getArticles({ topic: topic }).then(({ articles }) => {
-      this.setState({ articles: articles, isLoading: false });
-    });
+    api
+      .getArticles({ topic: topic })
+      .then(({ articles }) => {
+        this.setState({ articles: articles, isLoading: false });
+      })
+      .catch((err) => {
+        const { status, data } = err.response;
+        this.setState({
+          topicError: {
+            status: status,
+            msg: `${data.msg}. Please specify a valid topic.`,
+          },
+        });
+      });
   };
 
   render() {
