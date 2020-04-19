@@ -35,8 +35,7 @@ class SingleArticle extends Component {
 
   render() {
     const { article, isLoading, articleError } = this.state;
-    const { currentUser, path } = this.props;
-    console.log(path);
+    const { currentUser } = this.props;
     if (articleError)
       return <ErrorPage status={articleError.status} msg={articleError.msg} />;
     return (
