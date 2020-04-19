@@ -227,19 +227,52 @@ h4 {
 
 .Single-Article-Container {
   width: 90%;
-  margin: 2% auto;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  /* border: 1px solid black; */
   padding: 1% 2%;
-  background-color: #adefd1ff;
   letter-spacing: 1px;
   font-size: 1rem;
+}
+.Single-Article-Container h4 {
+  text-align: center;
 }
 
 .Article-Body {
   letter-spacing: 1px;
   word-spacing: 2px;
+  text-align: left;
+  margin: 3% 2%;
+}
+.Single-Article-Info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: left;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 10px;
+}
+.Single-Article-Info p {
+  color: #00203fff;
+  margin: 0px 15px;
+  font-size: 0.7rem;
+  font-weight: bolder;
+  height: 100%;
+  text-align: center;
+  line-height: 2em;
+  letter-spacing: 1px;
+}
+.Voting {
+  margin: 3% 2%;
 }
 /* <-------- Comments -------> */
+.Comments-Container {
+  margin-top: 2%;
+}
+
 .Comments {
   border: 1px solid black;
   display: flex;
@@ -249,16 +282,37 @@ h4 {
   background-color: white;
 }
 .Comment-Box {
+  display: flex;
+  background-color: rgb(200, 235, 236);
+  flex-direction: column;
+  align-items: flex-start;
   margin: 1% auto;
-  width: 90%;
+  padding: 1% 2%;
+  width: 80%;
   border: 1px solid black;
-  padding: 1%;
   text-align: left;
-  /* justify-content: left; */
+  font-size: 0.8em;
+}
+.Comment-Form {
+  margin-top: 2%;
+  font-size: 1rem;
+}
+.Comments h4 {
+  text-decoration: underline;
+}
+.Comments article {
+  font-size: 0.8rem;
+  margin-bottom: 2%;
+}
+.Comment-Info {
+  color: #00203fff;
+  font-size: 0.7rem;
+  font-weight: bolder;
+  letter-spacing: 1px;
 }
 
 .User-Comment {
-  background-color: rgb(200, 235, 236);
+  background-color: #f8d971;
 }
 /* <-------- Votes -------> */
 .Vote-Btn {
@@ -273,10 +327,6 @@ h4 {
   color: red;
   border: 1px solid rgb(83, 236, 63);
 }
-
-/* <-------- Comments Input Box -------> */
-/* .Comment-Input-Box {
-} */
 
 @media only screen and (max-width: 830px) {
   .Article-Info {
@@ -358,5 +408,35 @@ h4 {
   }
   .Header h1 {
     font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Comment-Form {
+    margin: 2% auto;
+    font-size: 0.7rem;
+    width: 80%;
+  }
+  .Comment-Form textarea {
+    display: block;
+  }
+  .Comment-Form button {
+    font-size: 0.6rem;
+  }
+  .Comment-Info {
+    font-size: 0.5rem;
+  }
+
+  .Single-Article-Info {
+    flex-direction: column;
+  }
+  .Single-Article-Info p {
+    font-size: 0.6rem;
+  }
+  .Article-Body {
+    font-size: 0.8rem;
+  }
+  .Comments article {
+    font-size: 0.7rem;
   }
 }

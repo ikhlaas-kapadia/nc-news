@@ -18,7 +18,7 @@ class Login extends Component {
               <option value="grumpy19">grumpy19</option>
               <option value="weegembump">weegembump</option>
             </select>
-            <p>Please login above to post comments/cast your votes:</p>
+            <p>Please login above to post comments/cast your votes</p>
           </div>
         ) : (
           <p>

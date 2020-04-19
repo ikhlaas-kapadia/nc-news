@@ -47,14 +47,17 @@ class Comments extends Component {
                   ? comment.author
                   : "Your comment"}
               </h4>
-              <article>{comment.body}</article>
-              <p>Posted: {moment(comment.created_at).format("MMMM Do YYYY")}</p>
+              <article>
+                <p>{comment.body}</p>
+              </article>
+              
               <Voter
                 currentUser={currentUser}
                 votes={comment.votes}
                 id={comment.comment_id}
                 type="comments"
               />
+              <p className="Comment-Info">Posted: {moment(comment.created_at).format("MMMM Do YYYY")}</p>
               {currentUser === comment.author && (
                 <button
                   onClick={() => {

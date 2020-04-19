@@ -49,13 +49,15 @@ class SingleArticle extends Component {
             <article className="Article-Body">
               <p>{article.body}</p>
             </article>
-            <Voter
-              currentUser={currentUser}
-              votes={article.votes}
-              id={article.article_id}
-              type="articles"
-            />
-            <div className="Article-Info">
+            <div className="Voting">
+              <Voter
+                currentUser={currentUser}
+                votes={article.votes}
+                id={article.article_id}
+                type="articles"
+              />
+            </div>
+            <div className="Single-Article-Info">
               <p>#{article.topic}</p>
               <p>✒️{article.author}</p>
               <p>

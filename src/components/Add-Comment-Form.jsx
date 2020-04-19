@@ -8,7 +8,7 @@ class CommentAdder extends Component {
   render() {
     const { inputValue } = this.state;
     return (
-      <form action="" onSubmit={this.handleSubmit}>
+      <form  className="Comment-Form" action="" onSubmit={this.handleSubmit}>
         <label>
           {" "}
           Post a Comment:
