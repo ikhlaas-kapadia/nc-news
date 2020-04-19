@@ -27,7 +27,7 @@ const ArticleCard = (props) => {
       </article>
       <div className="Article-Info">
         <p># {topic}</p>
-        <p>✒️{author} </p>
+        <p><span role="img" aria-label="Author">✒️</span>{author} </p>
         <p>Created: {moment(created_at).format("MMMM Do YYYY")}</p>
         <p>Comments: {comment_count}</p>
         <p>Votes: {votes}</p>

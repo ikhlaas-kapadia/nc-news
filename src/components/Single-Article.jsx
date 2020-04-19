@@ -58,7 +58,12 @@ class SingleArticle extends Component {
             </div>
             <div className="Single-Article-Info">
               <p>#{article.topic}</p>
-              <p>✒️{article.author}</p>
+              <p>
+                <span role="img" aria-label="Author">
+                  ✒️
+                </span>
+                {article.author}
+              </p>
               <p>
                 Created: {moment(article.created_at).format("MMMM Do YYYY")}
               </p>
