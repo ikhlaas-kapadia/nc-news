@@ -235,7 +235,7 @@ h4 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: left;
+  justify-content: center;
   margin: 0 auto;
   width: 100%;
   margin-top: 10px;
@@ -412,6 +412,12 @@ h4 {
     font-size: 2rem;
   }
 }
+@media only screen and (max-width: 730px) {
+  .Single-Article-Info {
+    flex-direction: column;
+    justify-content: left;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .Comment-Form {
@@ -431,6 +437,7 @@ h4 {
 
   .Single-Article-Info {
     flex-direction: column;
+    justify-content: left;
   }
   .Single-Article-Info p {
     font-size: 0.6rem;
