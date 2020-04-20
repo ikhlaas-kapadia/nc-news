@@ -3,33 +3,25 @@ import "../App.css";
 import * as api from "../utils/api";
 import Voter from "./Voter";
 import CommentAdder from "./Add-Comment-Form";
-import ErrorPage from "./Error-Page";
 import Loader from "./Loader";
 import moment from "moment";
 
 class Comments extends Component {
-  state = { comments: [], isLoading: true, commentsError: null };
+  state = { comments: [], isLoading: true };
 
   componentDidMount() {
     const { article_id } = this.props;
-    api
-      .getComments(article_id)
-      .then(({ comments }) => {
-        this.setState({ comments: comments, isLoading: false });
-      })
-      .catch((err) => {
-        console.dir(err);
-      });
+    api.getComments(article_id).then(({ comments }) => {
+      this.setState({ comments: comments, isLoading: false });
+    });
   }
   render() {
-    const { comments, isLoading, commentsError } = this.state;
+    const { comments, isLoading } = this.state;
     const { currentUser } = this.props;
-    if (commentsError) return <ErrorPage />;
 
-    return isLoading ? (
-      <Loader />
-    ) : (
+    return (
       <section className="Comments">
+        {isLoading && <Loader />}
         <h4>Comments</h4>
         <CommentAdder addComment={this.addComment} currentUser={currentUser} />
         {comments.map((comment) => {
@@ -50,14 +42,16 @@ class Comments extends Component {
               <article>
                 <p>{comment.body}</p>
               </article>
-              
+
               <Voter
                 currentUser={currentUser}
                 votes={comment.votes}
                 id={comment.comment_id}
                 type="comments"
               />
-              <p className="Comment-Info">Posted: {moment(comment.created_at).format("MMMM Do YYYY")}</p>
+              <p className="Comment-Info">
+                Posted: {moment(comment.created_at).format("MMMM Do YYYY")}
+              </p>
               {currentUser === comment.author && (
                 <button
                   onClick={() => {
