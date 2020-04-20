@@ -48,6 +48,12 @@ Header h1 {
   text-align: left;
   font-size: 0.8rem;
 }
+.Logout-Btn {
+  color: #00203fff;
+  background-color: #f18f01;
+  border: 1px solid #f18f01;
+  font-weight: bolder;
+}
 
 .User-Menu {
   /* border: 1px solid red; */
@@ -345,11 +351,11 @@ h4 {
   }
   .Sort-Section {
     flex-direction: column;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     align-content: flex-start;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 30%;
+    width: 40%;
     margin: 0 auto;
   }
 
@@ -369,6 +375,10 @@ h4 {
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+
+  .Logout-Btn {
+    font-size: 0.6rem;
   }
   .Link,
   .Link:visited {
@@ -398,13 +408,14 @@ h4 {
     width: fit-content;
     text-align: left;
     padding: 0;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
   .options {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
 
   .Header {
+    border: 1px solid red;
     align-items: center;
     /* align-content: flex-end; */
   }
@@ -449,13 +460,12 @@ h4 {
     font-size: 0.7rem;
   }
   .Login-msg {
-    font-size: 0.4rem;
+    font-size: 0.6rem;
   }
 }
 @media only screen and (max-width: 515px) {
   .Link,
   .Link:visited {
-    /* border: 1px solid yellow; */
     font-size: 0.6rem;
     margin: 1% auto;
     margin-top: 5%;
