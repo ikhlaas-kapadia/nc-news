@@ -196,28 +196,21 @@ h4 {
 }
 
 /* <-------- Sort Component -------> */
-.Sort-Component {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: flex-start;
-  width: 90%;
-}
 
 .Sort-Section {
+  border: 1px solid red;
   display: flex;
   flex-direction: row;
+  font-size: 0.8rem;
   align-content: center;
-  margin-bottom: 1%;
-  margin-left: 2%;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
-.Sort-Section {
-  margin-right: 10px;
-}
-
-.Filter-Section {
-  margin-left: 2%;
+.Sort-Section div select {
+  margin: 10px;
+  font-size: 0.8rem;
 }
 
 /* <-------- Single Article -------> */
@@ -358,20 +351,6 @@ h4 {
   }
 }
 
-@media only screen and (max-width: 510px) {
-  .Sort-Component {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 90%;
-    margin: 0 auto;
-    font-size: 0.6rem;
-  }
-  .Sort-Section {
-    margin-bottom: 10px;
-  }
-}
-
 @media only screen and (max-width: 680px) {
   .Wrapper {
     display: flex;
@@ -385,8 +364,9 @@ h4 {
   }
   .Link,
   .Link:visited {
-    font-size: 0.6rem;
-    margin: 2% auto;
+    font-size: 1rem;
+    margin: 1% auto;
+    margin-top: 5%;
     padding: 2%;
   }
 
@@ -395,25 +375,28 @@ h4 {
     justify-content: center;
     width: 90%;
     height: 100%;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .Article-Item article {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
   .Article-Info p {
     margin-left: 15px;
-    font-size: 0.4rem;
+    font-size: 0.5rem;
     font-weight: bolder;
   }
 
   .Single-Article-Link,
   .Single-Article-Link:visited {
-    font-size: 0.4rem;
+    font-size: 0.5rem;
     padding: 3px;
   }
 
   .Login-Section {
+    font-size: 0.5rem;
+  }
+  .options {
     font-size: 0.5rem;
   }
 
@@ -423,6 +406,19 @@ h4 {
   }
   .Header h1 {
     font-size: 2rem;
+  }
+  .Sort-Section {
+    flex-direction: column;
+    font-size: 0.6rem;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 40%;
+  }
+
+  .Sort-Section div select {
+    margin: 5px;
+    font-size: 0.6rem;
   }
 }
 
@@ -456,5 +452,15 @@ h4 {
   }
   .Login-msg {
     font-size: 0.4rem;
+  }
+}
+@media only screen and (max-width: 515px) {
+  .Link,
+  .Link:visited {
+    /* border: 1px solid yellow; */
+    font-size: 0.6rem;
+    margin: 1% auto;
+    margin-top: 5%;
+    padding: 2%;
   }
 }
