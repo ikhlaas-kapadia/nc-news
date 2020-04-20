@@ -350,11 +350,10 @@ h4 {
     letter-spacing: 1px;
   }
   .Sort-Section {
-    border: 1px solid brown;
     flex-direction: row;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-align: center;
-    width: fit-content;
+    width: 90%;
     margin: 0 auto;
     padding: 0 auto;
   }
@@ -364,7 +363,7 @@ h4 {
 
   .Sort-Section div select {
     margin: 5px;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
   .options {
     font-size: 0.6rem;
@@ -418,9 +417,7 @@ h4 {
   }
 
   .Header {
-    border: 1px solid red;
     align-items: center;
-    /* align-content: flex-end; */
   }
   .Header h1 {
     font-size: 2rem;
