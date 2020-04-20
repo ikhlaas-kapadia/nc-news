@@ -6,7 +6,7 @@ class CommentAdder extends Component {
     inputValue: "",
   };
   render() {
-    const { inputValue } = this.state;
+    const { inputValue, loggedIn } = this.state;
     const { currentUser } = this.props;
     return (
       <form className="Comment-Form" action="" onSubmit={this.handleSubmit}>
@@ -22,7 +22,10 @@ class CommentAdder extends Component {
             cols="30"
             value={inputValue}
           />
-          <button>{currentUser ? "Add" : "Login to add your comment"}</button>
+          <button>Add Comment</button>
+          {loggedIn === false && !currentUser && (
+            <p className="Login-msg">Please login to add your comment</p>
+          )}
         </label>
       </form>
     );
@@ -35,7 +38,7 @@ class CommentAdder extends Component {
     e.preventDefault();
     const { addComment, currentUser } = this.props;
     if (!currentUser) {
-      console.dir(e.target);
+      this.setState({ loggedIn: false });
       return;
     }
     const { inputValue } = this.state;
