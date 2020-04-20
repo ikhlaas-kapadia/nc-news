@@ -13,6 +13,7 @@ class SingleArticle extends Component {
     article: {},
     isLoading: true,
     articleError: null,
+    commentClicked: false,
   };
   componentDidMount() {
     const { article_id } = this.props;
@@ -70,7 +71,10 @@ class SingleArticle extends Component {
               <p>
                 Comments: {article.comment_count}{" "}
                 <Link to="comments">
-                  <button>View comments</button>
+                  <button>View</button>
+                </Link>
+                <Link to="">
+                  <button>Hide</button>
                 </Link>
               </p>
             </div>
