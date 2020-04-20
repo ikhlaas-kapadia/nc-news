@@ -313,10 +313,11 @@ h4 {
   background-color: #f8d971;
 }
 .Login-msg {
-  font-size: 0.7rem;
-  width: 80%;
+  font-size: 0.75rem;
+  width: fit-content;
   text-transform: uppercase;
-  background-color: #f14747;
+  background-color: #f70000c2;
+  text-decoration: overline underline;
 }
 /* <-------- Votes -------> */
 .Vote-Btn {
