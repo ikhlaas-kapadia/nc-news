@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NC News
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This is a Front End React-App which is deployed on Netlify and uses data from a Back End App hosted on Heroku. The app is like a Reddit style news and discussion website where users can log in and interact with the UI by voting for articles and comments in addition to posting and deleting comments. Users can also filter and sort articles by votes,comments, author and date.
 
-### `npm start`
+## Links
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Below are links to relevant repositories and the hosted website:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Back End Repository: https://github.com/ikhlaas-kapadia/nc_news_backend
 
-### `npm test`
+- Front End Repository: https://github.com/ikhlaas-kapadia/nc-news
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Hosted Application : https://ikhlaas-nc-news.netlify.app/
 
-### `npm run build`
+## Getting Started Locally
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Fork the Repository
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+2. Clone the fork to your local machine
+   e.g. `git clone https://github.com/ikhlaas-kapadia/nc-news`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. cd in to the repository.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+4. Install dependencies using **npm** (Node Package Mananger) with the minimum required version:
+   - npm i @reach/router
+   - npm i axios@0.19.2
+   - npm i react@16.13.1
+   - npm i react-scripts@3.4.1
+   - npm i moment@2.24.0
+   - npm i node@v12.13.0
+5. Finally, to run the app in your browser, use npm script **`npm start`** on command line.
