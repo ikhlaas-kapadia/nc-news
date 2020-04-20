@@ -25,7 +25,6 @@ class Voter extends Component {
         </button>
         Votes: {this.props.votes + optimisticVote}{" "}
         <button
-          className="Vote-Btn"
           onClick={() => this.handleVoteclick(1)}
           disabled={optimisticVote > 0}
           className={optimisticVote === 1 ? "Vote-Btn Voted" : "Vote-Btn "}
@@ -34,9 +33,9 @@ class Voter extends Component {
             👍
           </span>
         </button>
-          {loggedIn === false && !currentUser && (
-            <p className="Login-msg">Please login to cast your vote</p>
-          )}
+        {loggedIn === false && !currentUser && (
+          <p className="Login-msg">Please login to cast your vote</p>
+        )}
       </section>
     );
   }
