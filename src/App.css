@@ -241,15 +241,15 @@ h4 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: left;
   margin: 0 auto;
-  width: 100%;
+  width: 99%;
   margin-top: 10px;
 }
 .Single-Article-Info p {
   color: #00203fff;
   margin: 0px 10px;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: bolder;
   height: 100%;
   text-align: center;
