@@ -255,8 +255,8 @@ h4 {
 }
 .Single-Article-Info p {
   color: #00203fff;
-  margin: 0px 15px;
-  font-size: 0.7rem;
+  margin: 0px 10px;
+  font-size: 0.6rem;
   font-weight: bolder;
   height: 100%;
   text-align: center;
@@ -312,6 +312,12 @@ h4 {
 .User-Comment {
   background-color: #f8d971;
 }
+.Login-msg {
+  font-size: 0.7rem;
+  width: 80%;
+  text-transform: uppercase;
+  background-color: #f14747;
+}
 /* <-------- Votes -------> */
 .Vote-Btn {
   height: 90%;
@@ -325,6 +331,13 @@ h4 {
   color: red;
   border: 1px solid rgb(83, 236, 63);
 }
+
+/* <-------- Error Page -------> */
+.Error {
+  text-align: center;
+}
+
+/* <-------- Media queries -------> */
 
 @media only screen and (max-width: 830px) {
   .Article-Info {
