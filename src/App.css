@@ -350,17 +350,23 @@ h4 {
     letter-spacing: 1px;
   }
   .Sort-Section {
-    flex-direction: column;
-    font-size: 0.7rem;
-    align-content: flex-start;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 40%;
+    border: 1px solid brown;
+    flex-direction: row;
+    font-size: 0.8rem;
+    text-align: center;
+    width: fit-content;
     margin: 0 auto;
+    padding: 0 auto;
+  }
+  .Sort-Section div {
+    margin: 0;
   }
 
   .Sort-Section div select {
     margin: 5px;
+    font-size: 0.8rem;
+  }
+  .options {
     font-size: 0.6rem;
   }
 }
@@ -408,9 +414,6 @@ h4 {
     width: fit-content;
     text-align: left;
     padding: 0;
-    font-size: 0.7rem;
-  }
-  .options {
     font-size: 0.6rem;
   }
 
