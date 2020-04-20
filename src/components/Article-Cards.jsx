@@ -12,22 +12,25 @@ const ArticleCard = (props) => {
     votes,
     body,
   } = props.article;
- 
 
   return (
     <li className="Article-Item">
       <header>
-        <h4>{title}</h4>
+        <Link to={`/articles/${article_id}`} className="Single-Article-Link">
+          <h4>{title}</h4>
+        </Link>
       </header>
       <article>
         <p>{body.slice(0, 200)}....</p>
-        <Link to={`/articles/${article_id}`} className="Single-Article-Link">
-          View Article
-        </Link>
       </article>
       <div className="Article-Info">
         <p># {topic}</p>
-        <p><span role="img" aria-label="Author">✒️</span>{author} </p>
+        <p>
+          <span role="img" aria-label="Author">
+            ✒️
+          </span>
+          {author}{" "}
+        </p>
         <p>Created: {moment(created_at).format("MMMM Do YYYY")}</p>
         <p>Comments: {comment_count}</p>
         <p>Votes: {votes}</p>

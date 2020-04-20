@@ -171,15 +171,10 @@ Header h1 {
 }
 .Single-Article-Link,
 .Single-Article-Link:visited {
-  font-size: 0.6rem;
   text-decoration: none;
   letter-spacing: 1px;
-  border: 1px black solid;
-  border-radius: 5px;
-  padding: 6px;
-  background-color: rgba(0, 31, 63, 0.767);
-  color: white;
-  margin-left: 15px;
+  color: black;
+ 
 }
 .Article-Item header {
   margin: 0 15px;
@@ -385,11 +380,7 @@ h4 {
     font-size: 0.5rem;
     font-weight: bolder;
   }
-
-  .Single-Article-Link,
-  .Single-Article-Link:visited {
-    font-size: 0.5rem;
-    padding: 3px;
+    
   }
 
   .Login-Section {
@@ -418,7 +409,6 @@ h4 {
   .Sort-Section div select {
     margin: 5px;
     font-size: 0.6rem;
-  }
 }
 
 @media only screen and (max-width: 600px) {
