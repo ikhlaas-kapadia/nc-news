@@ -18,7 +18,7 @@ class Login extends Component {
         ) : (
           <p>
             Logged in as {currentUser}{" "}
-            <button onClick={this.handleLogout}>Logout</button>
+            <button className="Logout-Btn" onClick={this.handleLogout}>Logout</button>
           </p>
         )}
       </section>
