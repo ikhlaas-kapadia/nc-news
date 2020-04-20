@@ -344,7 +344,6 @@ h4 {
     letter-spacing: 1px;
   }
   .Sort-Section {
-    border: 1px solid red;
     flex-direction: column;
     font-size: 0.6rem;
     align-content: flex-start;
