@@ -198,7 +198,6 @@ h4 {
 /* <-------- Sort Component -------> */
 
 .Sort-Section {
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   font-size: 0.8rem;
