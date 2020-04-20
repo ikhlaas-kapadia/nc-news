@@ -204,8 +204,8 @@ h4 {
   align-items: center;
   justify-content: center;
   align-content: center;
-  width: 100%;
-  /* margin: 0 auto; */
+  width: 85%;
+  margin: 0 auto;
 }
 
 .Sort-Section div select {
@@ -349,25 +349,6 @@ h4 {
     line-height: 2em;
     letter-spacing: 1px;
   }
-  .Sort-Section {
-    flex-direction: row;
-    font-size: 0.7rem;
-    text-align: center;
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 auto;
-  }
-  .Sort-Section div {
-    margin: 0;
-  }
-
-  .Sort-Section div select {
-    margin: 5px;
-    font-size: 0.6rem;
-  }
-  .options {
-    font-size: 0.6rem;
-  }
 }
 
 @media only screen and (max-width: 680px) {
@@ -421,6 +402,25 @@ h4 {
   }
   .Header h1 {
     font-size: 2rem;
+  }
+  .Sort-Section {
+    flex-direction: row;
+    font-size: 0.7rem;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+  .Sort-Section div {
+    margin: 0;
+  }
+
+  .Sort-Section div select {
+    margin: 5px;
+    font-size: 0.6rem;
+  }
+  .options {
+    font-size: 0.6rem;
   }
 }
 @media only screen and (max-width: 730px) {
