@@ -12,24 +12,27 @@ class Sort extends Component {
     return (
       <>
         <section className="Sort-Section">
-          Sort By:
-          <select onChange={(e) => this.handleChange(e, "sort_by")}>
-            <option value="created_at">Date</option>
-            <option value="votes">Votes</option>
-            <option value="comment_count">Comments</option>
-          </select>
-          Order
-          <select onChange={(e) => this.handleChange(e, "order")}>
-            <option value="desc">Descending</option>
-            <option value="asc">Ascending</option>
-          </select>
-          <br />
-        </section>
-        <section className="Filter-Section">
-          <label>
-            Filter by Author:
-            <UserDropdown handleInputValue={this.handleInput} />
-          </label>
+          <div className="Sort-By">
+            Sort By:
+            <select onChange={(e) => this.handleChange(e, "sort_by")}>
+              <option value="created_at">Date</option>
+              <option value="votes">Votes</option>
+              <option value="comment_count">Comments</option>
+            </select>
+          </div>
+          <div className="Order-By">
+            Order:
+            <select onChange={(e) => this.handleChange(e, "order")}>
+              <option value="desc">Descending</option>
+              <option value="asc">Ascending</option>
+            </select>
+          </div>
+          <div className="Filter-By">
+            <label>
+              Filter by Author:
+              <UserDropdown handleInputValue={this.handleInput} />
+            </label>
+          </div>
         </section>
       </>
     );
